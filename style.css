@@ -1,0 +1,436 @@
+:root{
+  --color-primary:#0f172a;
+  --color-secondary:#ef4444;
+  --color-accent:#f59e0b;
+  --bg:#ffffff;
+  --text:#1e293b;
+  --muted:#6b7280;
+  --container-max:1200px;
+  --space-1:0.5rem;
+  --space-2:1rem;
+  --space-3:1.5rem;
+  --radius:12px;
+  --shadow:0 8px 24px rgba(31,41,51,0.08);
+  --font-sans: "Yanone Kaffeesatz", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html{height:100%; }
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  font-size:16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container{width:100%;max-width:1400px;margin:0 auto;padding:0 var(--space-2)}
+
+.skip-link{
+  position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{position:static;width:auto;height:auto;padding:.5rem 1rem;background:#111;color:#fff;border-radius:6px;z-index:9999}
+
+.header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.brand{
+display:flex;
+align-items:center;
+gap:15px;
+text-decoration:none;
+color:#0f172a;
+}
+
+.site-header{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(12px);
+box-shadow:0 4px 20px rgba(0,0,0,.08);
+}
+.brand img{
+width:70px;
+height:70px;
+border-radius:15px;
+object-fit:cover;
+}
+
+.brand-name{
+font-size:1.4rem;
+font-weight:800;
+letter-spacing:1px;
+text-transform:uppercase;
+}
+
+.main-content{
+  flex: 1;
+}
+.main-nav{position:relative}
+.nav-toggle{display:none;background:none;border:1px solid transparent;padding:.5rem .75rem;border-radius:8px}
+.nav-list{
+    display:flex;
+    gap:2.5rem;
+    list-style:none;
+    margin:0;
+}
+.nav-link{
+    position:relative;
+    text-decoration:none;
+    color:#1e293b;
+    font-size:1rem;
+    font-weight:600;
+    transition:.3s;
+}
+.nav-link::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:3px;
+    background:#ef4444;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#ef4444;
+}
+
+.nav-link:hover::after{
+    width:100%;
+}
+.nav-link::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:3px;
+    background:#ef4444;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.nav-link:hover::after{width:100%}
+.nav-link:hover{
+    color:#ef4444;
+}
+
+.hero{
+    position:relative;
+    min-height:60vh;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background: url(img/img.jpg) center/cover no-repeat
+    ;}
+.hero-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block
+}
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+    z-index: 1;
+}
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    z-index: 2;
+    transform: translateY(20%);
+    color:#fff;
+}
+.hero-content h1{
+    font-size:clamp(1.6rem,4vw,3rem);
+    margin:0 0 .5rem;line-height:1;
+}
+.hero-sub{font-size:clamp(1rem,1.6vw,1.125rem);margin:0 0 1rem;color:rgba(255,255,255,0.92)}
+
+.btn{display:inline-block;padding:.65rem 1rem;border-radius:10px;text-decoration:none;font-weight:600}
+.btn-primary{background:var(--color-primary);color:#fff;box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s}
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(214,69,69,0.18)}
+.btn-outline{border:2px solid rgba(255,255,255,0.12);color:#fff;background:transparent;padding:.5rem .9rem;border-radius:8px}
+
+.main-content{padding:2.25rem 0}
+.section{margin-bottom:2.5rem}
+.lead{color:var(--muted);margin-top:0}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1.25rem;
+  margin-top:1rem;
+}
+
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card img{width:100%;height:200px;object-fit:cover}
+.card-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem}
+.card h3{margin:0;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);flex:1}
+.card .btn-outline{
+    align-self:center;
+    background:transparent;
+    color:var(--color-primary);
+    border-color:var(--color-primary)
+}
+.grid-two{display:grid;grid-template-columns:1fr;gap:1.25rem;align-items:center}
+.side-image img{width:100%;height:auto;border-radius:10px;box-shadow:var(--shadow)}
+
+.site-footer{background:#0f1724;color:#cbd5e1;padding:1.25rem 0;margin-top:2rem}
+.footer-inner{display:flex;flex-direction:column;gap:.5rem;align-items:center}
+.footer-link{color:#cbd5e1;text-decoration:none;margin-left:.75rem}
+.footer-link:hover{text-decoration:underline}
+/* Responsive */    
+@media (min-width:768px){
+  .nav-toggle{display:none}
+  .nav-list{display:flex}
+  .grid-two{grid-template-columns:1fr 420px}
+  .hero-content{padding:4rem 0}
+  .header-inner{padding:1.25rem 0}
+}
+
+@media (max-width:767px){
+  .nav-toggle{display:inline-block}
+  .nav-list{position:absolute;right:0;top:100%;background:#fff;padding:1rem;border-radius:8px;box-shadow:var(--shadow);display:none;flex-direction:column}
+  .nav-list.open{display:flex}
+  .nav-link{color:var(--text)}
+  .hero{min-height:48vh}
+  .card img{height:160px}
+}
+
+/* Accessibility preference */
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+
+.destacados {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+.destacados .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.destacados .card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 350px;
+  transition: transform 0.3s ease;
+}
+
+.destacados .card:hover {
+  transform: translateY(-5px);
+}
+
+.destacados img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.destacados .card-body {
+  padding: 15px;
+}
+
+.destacados .btn-primary {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #d35400;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.destacados .btn-primary:hover {
+  background-color: #e67e22;
+}
+
+.contacto{
+    padding: 100px 0;
+    background: linear-gradient(
+        135deg,
+        #f8fafc,
+        #e2e8f0
+    );
+}
+
+.contacto-container{
+    display:flex;
+    gap:60px;
+    align-items:center;
+    justify-content:center;
+}
+
+.contacto-info{
+    flex:1;
+}
+
+.badge{
+    display:inline-block;
+    background:#0ea5e9;
+    color:#fff;
+    padding:8px 15px;
+    border-radius:50px;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.contacto-text{
+    color:#64748b;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.info-card{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+    padding:15px;
+    background:white;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.info-card span{
+    font-size:28px;
+}
+
+.contacto-formulario{
+    flex:1;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+}
+
+.contacto-formulario form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contacto-formulario input,
+.contacto-formulario textarea{
+    width:100%;
+    padding:15px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.contacto-formulario input:focus,
+.contacto-formulario textarea:focus{
+    outline:none;
+    border-color:#0ea5e9;
+}
+
+.contacto-formulario button{
+    background:#0f172a;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contacto-formulario button:hover{
+    background:#0284c7;
+    transform:translateY(-2px);
+}
+@media (max-width: 768px){
+
+    .contacto-container{
+        flex-direction:column;
+    }
+
+    .contacto-info,
+    .contacto-formulario{
+        width:100%;
+    }
+
+}
+
+
+/* =====================================================
+   AJUSTES PARA BOOTSTRAP 5
+   Van al final del archivo para que tengan prioridad
+   sobre Bootstrap y se conserve el diseño original.
+   ===================================================== */
+
+/* --- Botones: usamos las variables propias de Bootstrap --- */
+.btn-primary{
+  --bs-btn-color:#fff;
+  --bs-btn-bg:var(--color-primary);
+  --bs-btn-border-color:var(--color-primary);
+  --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:#1e293b;
+  --bs-btn-hover-border-color:#1e293b;
+  --bs-btn-active-bg:#1e293b;
+  --bs-btn-active-border-color:#1e293b;
+}
+.btn-outline-primary{
+  --bs-btn-color:var(--color-primary);
+  --bs-btn-border-color:var(--color-primary);
+  --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--color-primary);
+  --bs-btn-hover-border-color:var(--color-primary);
+  --bs-btn-active-color:#fff;
+  --bs-btn-active-bg:var(--color-primary);
+  --bs-btn-active-border-color:var(--color-primary);
+}
+
+/* --- Navbar: se ve igual que tu encabezado original --- */
+.site-header .navbar{--bs-navbar-padding-y:0}
+@media (min-width:768px){
+  .site-header .navbar-nav{gap:2.5rem}
+}
+@media (max-width:767px){
+  .site-header .navbar-nav{padding:.5rem 0 1rem}
+}
+
+/* --- Títulos: Bootstrap los pone en peso 500, volvemos a negrita --- */
+h1,h2,h3,h4,h5,h6{font-weight:700}
+
+/* --- Contenido principal: margen lateral para que el .row no se salga --- */
+.main-content{padding:2.25rem var(--space-2)}
+
+/* --- Tarjetas: ahora el ancho lo controla la grilla de Bootstrap --- */
+.card{--bs-card-border-width:0}
+.destacados .card{width:100%}
+.card .btn{align-self:center}
+
+/* --- Contacto: las columnas las controla Bootstrap (col-lg-6) --- */
+.contacto-info,
+.contacto-formulario{flex:0 0 auto}
+.badge{font-weight:400}
+
+/* --- Footer --- */
+.footer-inner p{margin:0}
