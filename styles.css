@@ -465,10 +465,14 @@ h1,h2,h3,h4,h5,h6{font-weight:700}
     }
 
     50%{
-        transform:
+    transform:
         rotateY(180deg)
-        scale(1.05);
-    }
+        scale(1.1);
+
+    box-shadow:
+        0 0 40px #0d6efd,
+        0 0 80px rgba(13,110,253,.4);
+}
 
     100%{
         transform:
