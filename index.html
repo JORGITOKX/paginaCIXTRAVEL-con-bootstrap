@@ -15,7 +15,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Tu CSS personalizado -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -283,5 +283,26 @@
 
   <!-- BOOTSTRAP 5 (JS): necesario para que el menú funcione en móvil -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded",()=>{
+
+const botones=document.querySelectorAll(".btn-outline-primary");
+
+botones.forEach(boton=>{
+
+boton.addEventListener("click",function(){
+const tarjeta=this.closest(".card");
+document.querySelectorAll(".card").forEach(c=>{
+c.classList.remove("seleccionada");
+});
+tarjeta.classList.add("seleccionada");
+tarjeta.classList.add("reservada");
+setTimeout(()=>{
+tarjeta.classList.remove("reservada");
+},1200);
+});
+});
+});
+</script>
 </body>
 </html>
