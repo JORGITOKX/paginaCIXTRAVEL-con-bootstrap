@@ -453,11 +453,7 @@ h1,h2,h3,h4,h5,h6{font-weight:700}
 ================================== */
 
 .card.reservada{
-
-    animation:girarReserva 1.2s ease-in-out;
-
-    box-shadow:
-        0 0 30px rgba(13,110,253,.45);
+    animation:girarReserva 2.5s ease-in-out;
 }
 
 @keyframes girarReserva{
