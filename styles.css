@@ -508,3 +508,74 @@ h1,h2,h3,h4,h5,h6{font-weight:700}
     box-shadow:
         0 10px 20px rgba(13,110,253,.25);
 }
+
+/* ==================================================
+   LOGO ANIMADO CIX TRAVEL
+================================================== */
+
+.travel-logo{
+    transition: all .4s ease;
+
+    animation:
+        travelEntrance 1.5s ease-out,
+        floatLogo 3s ease-in-out infinite 1.5s;
+}
+
+/* Entrada inicial */
+
+@keyframes travelEntrance{
+
+    0%{
+        opacity:0;
+        transform:translateY(-60px) scale(.6);
+    }
+
+    60%{
+        transform:translateY(8px) scale(1.1);
+    }
+
+    80%{
+        transform:translateY(-4px);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* Efecto GPS / Pin de ubicación */
+
+@keyframes floatLogo{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    25%{
+        transform:translateY(-6px) rotate(-3deg);
+    }
+
+    50%{
+        transform:translateY(-10px) rotate(0deg);
+    }
+
+    75%{
+        transform:translateY(-6px) rotate(3deg);
+    }
+
+    100%{
+        transform:translateY(0) rotate(0deg);
+    }
+}
+
+/* Hover */
+
+.travel-logo:hover{
+
+    transform:scale(1.15);
+
+    filter:
+        drop-shadow(0 0 6px rgba(255,140,0,.5))
+        drop-shadow(0 0 12px rgba(255,140,0,.4));
+}
