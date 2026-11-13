@@ -16,6 +16,7 @@
 
   <!-- Tu CSS personalizado -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -86,8 +87,8 @@
       <p class="section-lead">Seleccionamos experiencias únicas para todos los gustos: arqueología, gastronomía y playas.</p>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <div class="col">
-          <article class="card h-100">
+        <div class="col" data-aos="fade-right">
+    <article class="card h-100">
             <img src="img/piramides.jpg" class="card-img-top" alt="Tour a las pirámides" loading="lazy">
             <div class="card-body">
               <h3 class="card-title">Ruta Piramidal</h3>
@@ -99,8 +100,8 @@
           </article>
         </div>
 
-        <div class="col">
-          <article class="card h-100">
+        <div class="col" data-aos="fade-up">
+    <article class="card h-100">
             <img src="img/gastronomia.jpg" class="card-img-top" alt="Experiencia gastronómica" loading="lazy">
             <div class="card-body">
               <h3 class="card-title">Sabores de Lambayeque</h3>
@@ -112,8 +113,8 @@
           </article>
         </div>
 
-        <div class="col">
-          <article class="card h-100">
+        <div class="col" data-aos="fade-left">
+    <article class="card h-100">
             <img src="img/chiclayo1.jpg" class="card-img-top" alt="Playas del norte" loading="lazy">
             <div class="card-body">
               <h3 class="card-title">Escapada a la Playa</h3>
@@ -158,7 +159,7 @@
       <p class="section-lead">Descansa en los mejores lugares seleccionados estratégicamente para tu viaje.</p>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <div class="col">
+        <div class="col" data-aos="zoom-in" data-aos-delay="100">
           <article class="card h-100">
             <img src="img/img hoteles/casa huesped.jpg" class="card-img-top" alt="Hotel en Pimentel" loading="lazy">
             <div class="card-body">
@@ -171,7 +172,7 @@
           </article>
         </div>
 
-        <div class="col">
+        <div class="col" data-aos="zoom-in" data-aos-delay="300">
           <article class="card h-100">
             <img src="img/img hoteles/Casa Andina.jpg" class="card-img-top" alt="Hotel Centro" loading="lazy">
             <div class="card-body">
@@ -184,7 +185,7 @@
           </article>
         </div>
 
-        <div class="col">
+        <div class="col" data-aos="zoom-in" data-aos-delay="500">
           <article class="card h-100">
             <img src="img/img hoteles/winmeier-hotel-y-casino.jpg" class="card-img-top" alt="Hotel Casino" loading="lazy">
             <div class="card-body">
@@ -205,7 +206,7 @@
       <p class="section-lead">Disfruta del sol y la arena en los mejores destinos costeros de Lambayeque.</p>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <div class="col">
+        <div class="col" data-aos="flip-left" data-aos-delay="100">
           <article class="card h-100">
             <img src="img/img playas/pimentel.jpg" class="card-img-top" alt="Playa Pimentel" loading="lazy">
             <div class="card-body">
@@ -218,9 +219,9 @@
           </article>
         </div>
 
-        <div class="col">
+        <div class="col" data-aos="flip-up" data-aos-delay="300">
           <article class="card h-100">
-            <img src="img/img playas/media_luna.jpg" class="card-img-top" alt="Playa Media Luna" loading="lazy">
+            <img src="img/img playas/pimentel.jpg" class="card-img-top" alt="Playa Media Luna" loading="lazy">
             <div class="card-body">
               <h3 class="card-title">Playa Media Luna</h3>
               <p class="card-text">Para amantes de los paisajes panorámicos y la exploración de rutas menos convencionales.</p>
@@ -231,7 +232,7 @@
           </article>
         </div>
 
-        <div class="col">
+        <div class="col" data-aos="flip-left" data-aos-delay="500">
           <article class="card h-100">
             <img src="img/img playas/playa mosefu.jpg" class="card-img-top" alt="Playa Monsefú" loading="lazy">
             <div class="card-body">
@@ -337,6 +338,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 2500);
         });
     });
+});
+</script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration: 1200,
+    once: true
 });
 </script>
 </body>
